@@ -1,6 +1,7 @@
 import * as React from "react";
-import Select from "react-select"
 import {Player, Rank, Suit} from "../store/players/types"
+import {Delete} from "@material-ui/icons"
+import { Button, Select, TableCell, TableRow,TextField, MenuItem, FormControl, FormHelperText, InputLabel } from '@material-ui/core';
 var NumericInput = require('react-numeric-input');
 
 interface PlayerItemProps {
@@ -17,23 +18,46 @@ interface PlayerItemProps {
 
 export const PlayerItem: React.FC<PlayerItemProps> = props => {
   return (
-    <tr>
-      <td><button onClick={() => props.handleDelete(props.idx)}>X</button></td>
-      <td>{props.player.done}</td>
-      <td>{props.player.name}</td>
-      <td>{rankDropdown(props)}</td>
-      <td>{suitDropdown(props)}</td>
-      <td><NumericInput min={0} max={100} value={props.player.bennies} onChange={(val: any) => props.updateBen(props.idx, val)}/></td>
-      <td><NumericInput min={0} max={100} value={props.player.woundsTaken} onChange={(val: any) => props.updateWt(props.idx, val)}/></td>
-      <td><NumericInput min={0} max={100} value={props.player.fatigueTaken} onChange={(val: any) => props.updateFt(props.idx, val)}/></td>
-      <td>
-      <input
-            type="text"
-            value={props.player.notes}
-            onChange={e => props.updateNotes(props.idx, e.target.value)}
-         />
-      </td>
-    </tr>
+    <TableRow>
+      <TableCell>
+        <Button
+        variant="contained"
+        color="secondary"
+        startIcon={<Delete />}
+        onClick={() => props.handleDelete(props.idx)}></Button>
+      </TableCell>
+      <TableCell>{props.player.name}</TableCell>
+      <TableCell>{rankDropdown(props)}</TableCell>
+      <TableCell>{suitDropdown(props)}</TableCell>
+      <TableCell>
+        <TextField 
+          type="number"
+          value={props.player.bennies}
+          onChange={e => props.updateBen(props.idx, Number(e.target.value))}
+          inputProps={{ min: "0", max: "100", step: "1" }} />
+      </TableCell>
+      <TableCell>
+        <TextField 
+          type="number"
+          value={props.player.woundsTaken}
+          onChange={e => props.updateWt(props.idx, Number(e.target.value))}
+          inputProps={{ min: "0", max: "100", step: "1" }} />
+      </TableCell>
+      <TableCell>
+        <TextField 
+          type="number"
+          value={props.player.fatigueTaken}
+          onChange={e => props.updateFt(props.idx, Number(e.target.value))}
+          inputProps={{ min: "0", max: "100", step: "1" }} />
+      </TableCell>
+      <TableCell>
+        <TextField
+              type="text"
+              value={props.player.notes}
+              onChange={e => props.updateNotes(props.idx, e.target.value)}
+          />
+      </TableCell>
+    </TableRow>
   );
 };
 
@@ -56,13 +80,22 @@ const rankDropdown: React.FC<PlayerItemProps> = props => {
 
   const selectedOption = {value: props.player.rank, label: transformRankWord(Rank[props.player.rank])}
 
+
+  
   return (
+    <FormControl>
+    <InputLabel id={"rank-label-" + props.idx}>Rank</InputLabel>
     <Select
-      value={selectedOption}
-      onChange={(opt: any)=>props.updateRank(props.idx, opt.value)}
-      options={options}
-    />
-  );
+      labelId={"rank-label-" + props.idx}
+      value={selectedOption.value}
+      onChange={(event: any) => props.updateRank(props.idx, event.target.value)}
+    >
+      {options.map((item: any) => {
+      return <MenuItem value={item.value}>{item.label}</MenuItem>
+      })}
+    </Select>
+  </FormControl>
+);
 }
 
 const transformRankWord = (word: string): string => {
@@ -105,10 +138,17 @@ const suitDropdown: React.FC<PlayerItemProps> = props => {
   const selectedOption: option = {value: props.player.suit, label: Suit[props.player.suit]}
 
   return (
+    <FormControl>
+    <InputLabel id={"suit-label-" + props.idx}>Suit</InputLabel>
     <Select
-      value={selectedOption}
-      onChange={(opt: any)=>props.updateSuit(props.idx, opt.value)}
-      options={options}
-    />
-  );
+      labelId={"suit-label-" + props.idx}
+      value={selectedOption.value}
+      onChange={(event: any) => props.updateSuit(props.idx, event.target.value)}
+    >
+      {options.map((item: any) => {
+      return <MenuItem value={item.value}>{item.label}</MenuItem>
+      })}
+    </Select>
+  </FormControl>
+);
 }
