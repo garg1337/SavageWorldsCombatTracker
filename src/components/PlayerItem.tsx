@@ -32,6 +32,7 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
+          label="Bennies"
           value={props.player.bennies}
           onChange={e => props.updateBen(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -39,6 +40,7 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
+          label="Wounds"
           value={props.player.woundsTaken}
           onChange={e => props.updateWt(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -46,6 +48,7 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
+          label="Fatigue"
           value={props.player.fatigueTaken}
           onChange={e => props.updateFt(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -53,7 +56,10 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField
               type="text"
+              label="Notes"
               value={props.player.notes}
+              multiline
+              rows="5"
               onChange={e => props.updateNotes(props.idx, e.target.value)}
           />
       </TableCell>

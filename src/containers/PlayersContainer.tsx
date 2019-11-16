@@ -6,6 +6,7 @@ import { deletePlayer, addPlayer, updateSuit, updateRank, updateBen, updateFt, u
 import {Player} from "../store/players/types"
 import { AppState } from "../store"
 import { Button, Table, TableBody, TableRow, TableHead, TextField, TableCell, TableFooter } from '@material-ui/core';
+import './PlayersContainer.css';
 
 interface PlayersContainerState {
   playerInput: string;
@@ -71,6 +72,16 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
     return (
       <div>
         <Table>
+            <colgroup>
+                <col width="1%" />
+                <col width="1%" />
+                <col width="1%" />
+                <col width="1%" />
+                <col width="1%" />
+                <col width="1%" />
+                <col width="1%" />
+                <col width="93%" />
+            </colgroup>
             <TableHead>
               <TableRow>
                 <TableCell></TableCell>
@@ -86,21 +97,23 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
             <TableBody>
             {playerJSX}
           </TableBody>
-          <TableFooter>
-            <TableRow>        <TextField
-          onChange={this.handleTextChange}
-          placeholder={"New Player Here"}
-          value={this.state.playerInput}
-        />
-                <Button variant="contained" color="primary" onClick={this.handleButtonClick}>Add Player</Button>
-
-</TableRow>
-            <TableRow>        <Button variant="contained" color="primary" onClick={this.props.sortInit}>Sort Initiative</Button>
-</TableRow>
-            <TableRow>        <Button variant="contained" color="primary" onClick={this.props.resetInit}>Next Round</Button>
-</TableRow>
-          </TableFooter>
         </Table>
+        <div className="PlayerControls">
+          <div className="PlayerControl">
+            <TextField
+              onChange={this.handleTextChange}
+              placeholder={"New Player Here"}
+              value={this.state.playerInput}
+            />
+            <Button variant="contained" color="primary" onClick={this.handleButtonClick}>Add Player</Button>
+          </div>
+          <div className="PlayerControl">
+            <Button variant="contained" color="primary" onClick={this.props.sortInit}>Sort Initiative</Button>
+          </div>
+          <div className="PlayerControl">
+            <Button variant="contained" color="primary" onClick={this.props.resetInit}>Next Round</Button>
+          </div>
+        </div>
       </div>
     );
   }
