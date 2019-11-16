@@ -1,11 +1,11 @@
-import {ADD_PLAYER, AddPlayerAction, DELETE_PLAYER, DeletePlayerAction, UpdatePlayerSuitAction, UpdatePlayerRankAction,
+import {ADD_PLAYER, AddPlayerAction, DELETE_PLAYER, DeletePlayerAction, TogglePlayerDoneAction, UpdatePlayerSuitAction, UpdatePlayerRankAction,
      UPDATE_PLAYER_SUIT,
      UPDATE_PLAYER_RANK,
      UpdatePlayerWtAction,
      UpdatePlayerFtAction,
      UpdatePlayerBenAction,
      UPDATE_PLAYER_BEN,
-     UPDATE_PLAYER_WT, UPDATE_PLAYER_FT, SortInitAction, SORT_INIT, ResetInitAction, RESET_INIT, UpdatePlayerNotesAction, UPDATE_PLAYER_NOTES} from "./types";
+     UPDATE_PLAYER_WT, UPDATE_PLAYER_FT, SortInitAction, SORT_INIT, ResetInitAction, RESET_INIT, UpdatePlayerNotesAction, UPDATE_PLAYER_NOTES, TOGGLE_PLAYER_DONE} from "./types";
 
 export function addPlayer(name: string): AddPlayerAction {
     return {
@@ -17,6 +17,13 @@ export function addPlayer(name: string): AddPlayerAction {
 export function deletePlayer(num: number): DeletePlayerAction {
     return {
         type: DELETE_PLAYER,
+        payload: num
+    };
+}
+
+export function togglePlayerDone(num: number): TogglePlayerDoneAction {
+    return {
+        type: TOGGLE_PLAYER_DONE,
         payload: num
     };
 }

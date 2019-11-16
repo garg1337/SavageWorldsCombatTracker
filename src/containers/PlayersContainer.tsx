@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { PlayerItem } from "../components";
 
-import { deletePlayer, addPlayer, updateSuit, updateRank, updateBen, updateFt, updateWt, sortInit, resetInit, updateNotes } from "../store/players/actions"
+import { deletePlayer, addPlayer, updateSuit, updateRank, updateBen, updateFt, updateWt, sortInit, resetInit, updateNotes, togglePlayerDone } from "../store/players/actions"
 import {Player} from "../store/players/types"
 import { AppState } from "../store"
 import { Button, Table, TableBody, TableRow, TableHead, TextField, TableCell, TableFooter } from '@material-ui/core';
@@ -19,6 +19,7 @@ interface PlayersContainerProps {
   deletePlayer: (idx: number) => object;
   sortInit: () => object;
   resetInit: () => object;
+  toggleDone: (idx: number) => object;
   updateSuit: (idx: number, num: number) => object;
   updateRank: (idx: number, num: number) => object;
   updateWt: (idx: number, num: number) => object;
@@ -61,6 +62,7 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
       playerJSX = this.props.playerList.map((item, idx) => {
         return (
           <PlayerItem player={item} key={idx} idx={idx} handleDelete={this.handleDeleteButtonClick}
+          toggleDone={this.props.toggleDone}
           updateSuit={this.props.updateSuit} updateRank={this.props.updateRank}
           updateBen={this.props.updateBen} updateFt={this.props.updateFt}
           updateWt={this.props.updateWt}
@@ -80,10 +82,12 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
                 <col width="1%" />
                 <col width="1%" />
                 <col width="1%" />
-                <col width="93%" />
+                <col width="1%" />
+                <col width="92%" />
             </colgroup>
             <TableHead>
               <TableRow>
+                <TableCell></TableCell>
                 <TableCell></TableCell>
                 <TableCell></TableCell>
                 <TableCell>Rank</TableCell>
@@ -129,6 +133,7 @@ const MapStateToProps = (store: AppState) => {
 const MapDispatchToProps = (dispatch: any) => ({
   addPlayer: (item: string) => dispatch(addPlayer(item)),
   deletePlayer: (idx: number) => dispatch(deletePlayer(idx)),
+  toggleDone: (idx: number) => dispatch(togglePlayerDone(idx)),
   updateSuit: (idx: number, num: number) => dispatch(updateSuit(idx, num)),
   updateRank: (idx: number, num: number) => dispatch(updateRank(idx, num)),
   updateBen: (idx: number, num: number) => dispatch(updateBen(idx, num)),
@@ -136,7 +141,7 @@ const MapDispatchToProps = (dispatch: any) => ({
   updateFt: (idx: number, num: number) => dispatch(updateFt(idx, num)),
   updateNotes: (idx: number, str: string) => dispatch(updateNotes(idx, str)),
   sortInit: () => dispatch(sortInit()),
-  resetInit: () => dispatch(resetInit())
+  resetInit: () => dispatch(resetInit()),
 });
 
 export default connect(

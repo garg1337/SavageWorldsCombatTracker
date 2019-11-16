@@ -1,5 +1,5 @@
 import { PlayerActionTypes, PlayersState, ADD_PLAYER, DELETE_PLAYER, UPDATE_PLAYER_SUIT, UPDATE_PLAYER_RANK,
-     Player, Rank, Suit, UPDATE_PLAYER_BEN, UPDATE_PLAYER_WT, UPDATE_PLAYER_FT, SORT_INIT, RESET_INIT, UPDATE_PLAYER_NOTES } from "./types"
+     Player, Rank, Suit, UPDATE_PLAYER_BEN, UPDATE_PLAYER_WT, UPDATE_PLAYER_FT, SORT_INIT, RESET_INIT, UPDATE_PLAYER_NOTES, TOGGLE_PLAYER_DONE } from "./types"
 
 const initialState: PlayersState = {
     count: 2,
@@ -36,6 +36,13 @@ export function playersReducer(
                 ...state,
                 count: state.count - 1,
                 list: newList
+            };
+        case TOGGLE_PLAYER_DONE: 
+            const doneList = [...state.list]; 
+            doneList[action.payload].done = !doneList[action.payload].done;
+            return {
+                ...state,
+                list: doneList
             };
         case UPDATE_PLAYER_SUIT:
             const suitList = [...state.list]; 
@@ -97,7 +104,6 @@ export function playersReducer(
                 ...state,
                 list: sortList
             };
-
 
         default:
             return state;

@@ -47,6 +47,7 @@ export interface PlayersState {
 // Describing the different ACTION NAMES available  
 export const ADD_PLAYER = "ADD_PLAYER";
 export const DELETE_PLAYER = "DELETE_PLAYER";
+export const TOGGLE_PLAYER_DONE = "TOGGLE_PLAYER_DONE";
 export const UPDATE_PLAYER_SUIT = "UPDATE_PLAYER_SUIT";
 export const UPDATE_PLAYER_RANK = "UPDATE_PLAYER_RANK";
 export const UPDATE_PLAYER_BEN = "UPDATE_PLAYER_BEN";
@@ -63,6 +64,11 @@ export interface AddPlayerAction {
 
 export interface DeletePlayerAction {
     type: typeof DELETE_PLAYER;
+    payload: number;
+}
+
+export interface TogglePlayerDoneAction {
+    type: typeof TOGGLE_PLAYER_DONE;
     payload: number;
 }
 
@@ -115,6 +121,6 @@ export interface SortInitAction {
 }
 
 export type PlayerActionTypes = 
-AddPlayerAction | DeletePlayerAction | UpdatePlayerRankAction | UpdatePlayerSuitAction
+AddPlayerAction | DeletePlayerAction | TogglePlayerDoneAction | UpdatePlayerRankAction | UpdatePlayerSuitAction
 | UpdatePlayerRankAction | UpdatePlayerBenAction 
 | UpdatePlayerFtAction | UpdatePlayerWtAction | UpdatePlayerNotesAction | ResetInitAction | SortInitAction ;

@@ -2,6 +2,7 @@ import * as React from "react";
 import {Player, Rank, Suit} from "../store/players/types"
 import {Delete} from "@material-ui/icons"
 import { Button, Select, TableCell, TableRow,TextField, MenuItem, FormControl, FormHelperText, InputLabel } from '@material-ui/core';
+import './PlayerItem.css';
 var NumericInput = require('react-numeric-input');
 
 interface PlayerItemProps {
@@ -14,17 +15,26 @@ interface PlayerItemProps {
   updateFt: (idx: number, num: number) => void;
   updateBen: (idx: number, num: number) => void;
   updateNotes: (idx: number, notes: string) => void;
+  toggleDone: (idx: number) => void;
 }
 
 export const PlayerItem: React.FC<PlayerItemProps> = props => {
+  const rowDoneClass = props.player.done ? "PlayerDone" : ""
   return (
-    <TableRow>
+    <TableRow className={rowDoneClass}>
       <TableCell>
         <Button
         variant="contained"
         color="secondary"
         startIcon={<Delete />}
         onClick={() => props.handleDelete(props.idx)}></Button>
+      </TableCell>
+      <TableCell>
+        <Button
+        variant="contained"
+        color="secondary"
+        startIcon={<Delete />}
+        onClick={() => props.toggleDone(props.idx)}></Button>
       </TableCell>
       <TableCell>{props.player.name}</TableCell>
       <TableCell>{rankDropdown(props)}</TableCell>
