@@ -1,7 +1,8 @@
 import * as React from "react";
 import {Player, Rank, Suit} from "../store/players/types"
-import {Delete} from "@material-ui/icons"
+import {Delete, Check} from "@material-ui/icons"
 import { Button, Select, TableCell, TableRow,TextField, MenuItem, FormControl, FormHelperText, InputLabel } from '@material-ui/core';
+import { ToggleButton } from '@material-ui/lab';
 import './PlayerItem.css';
 var NumericInput = require('react-numeric-input');
 
@@ -18,23 +19,22 @@ interface PlayerItemProps {
   toggleDone: (idx: number) => void;
 }
 
+
 export const PlayerItem: React.FC<PlayerItemProps> = props => {
   const rowDoneClass = props.player.done ? "PlayerDone" : ""
   return (
     <TableRow className={rowDoneClass}>
-      <TableCell>
-        <Button
-        variant="contained"
+      <TableCell className="PlayerButton">
+      <Button
+        className="DeletePlayerButton"
         color="secondary"
-        startIcon={<Delete />}
-        onClick={() => props.handleDelete(props.idx)}></Button>
+        onClick={() => props.handleDelete(props.idx)}><Delete/></Button>
       </TableCell>
-      <TableCell>
-        <Button
-        variant="contained"
-        color="secondary"
-        startIcon={<Delete />}
-        onClick={() => props.toggleDone(props.idx)}></Button>
+      <TableCell className="PlayerButton">
+        <ToggleButton
+          className="TogglePlayerDoneButton"
+          selected={props.player.done}
+          onClick={() => props.toggleDone(props.idx)}><Check/></ToggleButton>
       </TableCell>
       <TableCell>{props.player.name}</TableCell>
       <TableCell>{rankDropdown(props)}</TableCell>
