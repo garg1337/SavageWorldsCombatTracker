@@ -1,7 +1,7 @@
 {
   "name": "savageworldscombatmanager",
   "version": "0.1.0",
-  "homepage": "https://garg1337.github.io/SavageCombatTracker",
+  "homepage": "https://garg1337.github.io/SavageWorldsCombatTracker",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.6.1",
