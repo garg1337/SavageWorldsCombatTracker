@@ -91,6 +91,7 @@ export function playersReducer(
             resetlist.forEach(p => {
                 p.rank = Rank.NA
                 p.suit = Suit.NA
+                p.done = false
             });
 
             return {
