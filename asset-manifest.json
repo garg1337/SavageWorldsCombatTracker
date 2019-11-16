@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/SavageCombatTracker/static/css/main.74efba6c.chunk.css",
-    "main.js": "/SavageCombatTracker/static/js/main.f43c8d77.chunk.js",
-    "main.js.map": "/SavageCombatTracker/static/js/main.f43c8d77.chunk.js.map",
-    "runtime-main.js": "/SavageCombatTracker/static/js/runtime-main.1ac254ca.js",
-    "runtime-main.js.map": "/SavageCombatTracker/static/js/runtime-main.1ac254ca.js.map",
-    "static/js/2.ed2a6203.chunk.js": "/SavageCombatTracker/static/js/2.ed2a6203.chunk.js",
-    "static/js/2.ed2a6203.chunk.js.map": "/SavageCombatTracker/static/js/2.ed2a6203.chunk.js.map",
-    "index.html": "/SavageCombatTracker/index.html",
-    "precache-manifest.c2a945787833a3a87ea0d7195b3c7447.js": "/SavageCombatTracker/precache-manifest.c2a945787833a3a87ea0d7195b3c7447.js",
-    "service-worker.js": "/SavageCombatTracker/service-worker.js",
-    "static/css/main.74efba6c.chunk.css.map": "/SavageCombatTracker/static/css/main.74efba6c.chunk.css.map"
+    "main.css": "/SavageWorldsCombatTracker/static/css/main.74efba6c.chunk.css",
+    "main.js": "/SavageWorldsCombatTracker/static/js/main.f43c8d77.chunk.js",
+    "main.js.map": "/SavageWorldsCombatTracker/static/js/main.f43c8d77.chunk.js.map",
+    "runtime-main.js": "/SavageWorldsCombatTracker/static/js/runtime-main.9d119a76.js",
+    "runtime-main.js.map": "/SavageWorldsCombatTracker/static/js/runtime-main.9d119a76.js.map",
+    "static/js/2.ed2a6203.chunk.js": "/SavageWorldsCombatTracker/static/js/2.ed2a6203.chunk.js",
+    "static/js/2.ed2a6203.chunk.js.map": "/SavageWorldsCombatTracker/static/js/2.ed2a6203.chunk.js.map",
+    "index.html": "/SavageWorldsCombatTracker/index.html",
+    "precache-manifest.5ccef8f700de1721c48a4bec89fd0e72.js": "/SavageWorldsCombatTracker/precache-manifest.5ccef8f700de1721c48a4bec89fd0e72.js",
+    "service-worker.js": "/SavageWorldsCombatTracker/service-worker.js",
+    "static/css/main.74efba6c.chunk.css.map": "/SavageWorldsCombatTracker/static/css/main.74efba6c.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.1ac254ca.js",
+    "static/js/runtime-main.9d119a76.js",
     "static/js/2.ed2a6203.chunk.js",
     "static/css/main.74efba6c.chunk.css",
     "static/js/main.f43c8d77.chunk.js"
