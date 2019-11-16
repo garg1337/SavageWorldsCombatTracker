@@ -87,7 +87,7 @@ const rankDropdown: React.FC<PlayerItemProps> = props => {
 
   let i = 0;
   for (let item in Object.keys(Rank)) {
-    if (i >= Object.keys(Rank).length/2) {
+    if (i > Object.keys(Rank).length/2) {
       break;
     }
     options.push({value: Number(item), label: transformRankWord(Rank[item])})
@@ -144,7 +144,7 @@ const suitDropdown: React.FC<PlayerItemProps> = props => {
 
   let i = 0;
   for (let item in Object.keys(Suit)) {
-    if (i >= Object.keys(Suit).length/2) {
+    if (i > Object.keys(Suit).length/2) {
       break;
     }
     options.push({value: Number(item), label: Suit[item]})
