@@ -9,3 +9,8 @@
 .PlayerControl {
     margin: 10px;
 }
+
+.TableWrapper {
+    max-height: 400px;
+    overflow-y: auto;
+}

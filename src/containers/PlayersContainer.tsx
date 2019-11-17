@@ -73,35 +73,37 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
 
     return (
       <div>
-        <Table size="small" stickyHeader>
-            <colgroup>
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="1%" />
-                <col width="92%" />
-            </colgroup>
-            <TableHead>
-              <TableRow>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-                <TableCell></TableCell>
-                <TableCell>Rank</TableCell>
-                <TableCell>Suit</TableCell>
-                <TableCell>Bennies</TableCell>
-                <TableCell>Wounds</TableCell>
-                <TableCell>Fatigue</TableCell>
-                <TableCell>Notes</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-            {playerJSX}
-          </TableBody>
-        </Table>
+        <div className="TableWrapper">
+          <Table size="small" stickyHeader>
+              <colgroup>
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="1%" />
+                  <col width="92%" />
+              </colgroup>
+              <TableHead>
+                <TableRow>
+                  <TableCell></TableCell>
+                  <TableCell></TableCell>
+                  <TableCell></TableCell>
+                  <TableCell>Rank</TableCell>
+                  <TableCell>Suit</TableCell>
+                  <TableCell>Bennies</TableCell>
+                  <TableCell>Wounds</TableCell>
+                  <TableCell>Fatigue</TableCell>
+                  <TableCell>Notes</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+              {playerJSX}
+            </TableBody>
+          </Table>
+        </div>
         <div className="PlayerControls">
           <div className="PlayerControl">
             <TextField
