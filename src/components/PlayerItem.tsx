@@ -42,7 +42,6 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
-          label="Bennies"
           value={props.player.bennies}
           onChange={e => props.updateBen(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -50,7 +49,6 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
-          label="Wounds"
           value={props.player.woundsTaken}
           onChange={e => props.updateWt(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -58,7 +56,6 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
       <TableCell>
         <TextField 
           type="number"
-          label="Fatigue"
           value={props.player.fatigueTaken}
           onChange={e => props.updateFt(props.idx, Number(e.target.value))}
           inputProps={{ min: "0", max: "100", step: "1" }} />
@@ -97,9 +94,7 @@ const rankDropdown: React.FC<PlayerItemProps> = props => {
   
   return (
     <FormControl>
-    <InputLabel id={"rank-label-" + props.idx}>Rank</InputLabel>
     <Select
-      labelId={"rank-label-" + props.idx}
       value={selectedOption.value}
       onChange={(event: any) => props.updateRank(props.idx, event.target.value)}
     >
@@ -152,9 +147,7 @@ const suitDropdown: React.FC<PlayerItemProps> = props => {
 
   return (
     <FormControl>
-    <InputLabel id={"suit-label-" + props.idx}>Suit</InputLabel>
     <Select
-      labelId={"suit-label-" + props.idx}
       value={selectedOption.value}
       onChange={(event: any) => props.updateSuit(props.idx, event.target.value)}
     >

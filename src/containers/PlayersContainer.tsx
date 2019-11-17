@@ -73,7 +73,7 @@ class PlayersContainer extends React.Component<PlayersContainerProps, PlayersCon
 
     return (
       <div>
-        <Table>
+        <Table size="small" stickyHeader>
             <colgroup>
                 <col width="1%" />
                 <col width="1%" />
