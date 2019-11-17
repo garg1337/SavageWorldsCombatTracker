@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SavageWorldsCombatTracker/precache-manifest.dbcd85ef55ab96377c326463455fe776.js"
+  "/SavageWorldsCombatTracker/precache-manifest.7cd35223bb26e79bf60a7f1059946231.js"
 );
 
 self.addEventListener('message', (event) => {
