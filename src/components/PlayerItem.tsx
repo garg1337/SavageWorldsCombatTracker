@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Player, Rank, Suit} from "../store/players/types"
 import {Delete, Check} from "@material-ui/icons"
-import { Button, Select, TableCell, TableRow,TextField, MenuItem, FormControl, FormHelperText, InputLabel } from '@material-ui/core';
+import { Button, Select, TableCell, TableRow,TextField, MenuItem, FormControl, FormHelperText, InputLabel, TextareaAutosize } from '@material-ui/core';
 import { ToggleButton } from '@material-ui/lab';
 import './PlayerItem.css';
 var NumericInput = require('react-numeric-input');
@@ -64,12 +64,9 @@ export const PlayerItem: React.FC<PlayerItemProps> = props => {
           inputProps={{ min: "0", max: "100", step: "1" }} />
       </TableCell>
       <TableCell>
-        <TextField
-              type="text"
-              label="Notes"
+        <TextareaAutosize
+              rowsMax="4"
               value={props.player.notes}
-              multiline
-              rows="5"
               onChange={e => props.updateNotes(props.idx, e.target.value)}
           />
       </TableCell>
