@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "95ccee3e767022d5162fb13a807470ef",
+    "revision": "44bd5d59261d4df156120a192a026300",
     "url": "/SavageWorldsCombatTracker/index.html"
   },
   {
-    "revision": "57c5ab754ff19d812e09",
-    "url": "/SavageWorldsCombatTracker/static/css/main.74efba6c.chunk.css"
+    "revision": "b7d75e4591eb68cee126",
+    "url": "/SavageWorldsCombatTracker/static/css/main.f2b8f73e.chunk.css"
   },
   {
     "revision": "919c6dedd994603252f5",
     "url": "/SavageWorldsCombatTracker/static/js/2.3b04d017.chunk.js"
   },
   {
-    "revision": "57c5ab754ff19d812e09",
-    "url": "/SavageWorldsCombatTracker/static/js/main.cd46dfef.chunk.js"
+    "revision": "b7d75e4591eb68cee126",
+    "url": "/SavageWorldsCombatTracker/static/js/main.e763b2c9.chunk.js"
   },
   {
     "revision": "28ef3835cd0c25703680",

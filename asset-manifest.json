@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/SavageWorldsCombatTracker/static/css/main.74efba6c.chunk.css",
-    "main.js": "/SavageWorldsCombatTracker/static/js/main.cd46dfef.chunk.js",
-    "main.js.map": "/SavageWorldsCombatTracker/static/js/main.cd46dfef.chunk.js.map",
+    "main.css": "/SavageWorldsCombatTracker/static/css/main.f2b8f73e.chunk.css",
+    "main.js": "/SavageWorldsCombatTracker/static/js/main.e763b2c9.chunk.js",
+    "main.js.map": "/SavageWorldsCombatTracker/static/js/main.e763b2c9.chunk.js.map",
     "runtime-main.js": "/SavageWorldsCombatTracker/static/js/runtime-main.9d119a76.js",
     "runtime-main.js.map": "/SavageWorldsCombatTracker/static/js/runtime-main.9d119a76.js.map",
     "static/js/2.3b04d017.chunk.js": "/SavageWorldsCombatTracker/static/js/2.3b04d017.chunk.js",
     "static/js/2.3b04d017.chunk.js.map": "/SavageWorldsCombatTracker/static/js/2.3b04d017.chunk.js.map",
     "index.html": "/SavageWorldsCombatTracker/index.html",
-    "precache-manifest.7cd35223bb26e79bf60a7f1059946231.js": "/SavageWorldsCombatTracker/precache-manifest.7cd35223bb26e79bf60a7f1059946231.js",
+    "precache-manifest.d9f80e685253526bfd364a977c313783.js": "/SavageWorldsCombatTracker/precache-manifest.d9f80e685253526bfd364a977c313783.js",
     "service-worker.js": "/SavageWorldsCombatTracker/service-worker.js",
-    "static/css/main.74efba6c.chunk.css.map": "/SavageWorldsCombatTracker/static/css/main.74efba6c.chunk.css.map"
+    "static/css/main.f2b8f73e.chunk.css.map": "/SavageWorldsCombatTracker/static/css/main.f2b8f73e.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.9d119a76.js",
     "static/js/2.3b04d017.chunk.js",
-    "static/css/main.74efba6c.chunk.css",
-    "static/js/main.cd46dfef.chunk.js"
+    "static/css/main.f2b8f73e.chunk.css",
+    "static/js/main.e763b2c9.chunk.js"
   ]
 }
